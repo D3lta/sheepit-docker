@@ -26,6 +26,7 @@ RUN apt update && \
 		default-jre && \
 	apt-get -y autoremove && \
 rm -rf /var/lib/apt/lists/* /tmp/* && \
-wget -O ${WORKDIR}/${NAME} ${SHEEP_IT_JAR}
+wget -O ${WORKDIR}/${NAME} ${SHEEP_IT_JAR} && \
+java -jar ${WORKDIR}/${NAME} --version
 
 CMD ["/app/entrypoint.sh"]
