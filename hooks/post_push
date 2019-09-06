@@ -1,6 +1,4 @@
 #!/bin/bash
 
-export SHEEPIT_VERSION=`curl --silent --head https://www.sheepit-renderfarm.com/media/applet/client-latest.php | grep -Po 'Content-Disposition:.*filename="?\Ksheepit-client-[\d\.]+'`
-
-docker tag $IMAGE_NAME $DOCKER_REPO:$SHEEPIT_VERSION
-docker push $DOCKER_REPO:$SHEEPIT_VERSION
+docker tag $IMAGE_NAME $DOCKER_REPO:$VERSION
+docker push $DOCKER_REPO:$VERSION
