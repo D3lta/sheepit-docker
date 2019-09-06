@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:18.04
 
 ARG SHEEPIT_JAR_URL="https://www.sheepit-renderfarm.com/media/applet/client-latest.php"
 
