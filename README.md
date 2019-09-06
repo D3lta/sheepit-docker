@@ -5,7 +5,8 @@
 - SHEEPIT_MEM=STRING
 - SHEEPIT_SERVER=STRING
 
-### Example docker run
+## Examples
+### docker run
 ```
 docker run --rm -d \
  --name "sheepit" \
@@ -16,5 +17,5 @@ docker run --rm -d \
  d3lta/sheepit:latest
 ```
 
-### Example docker-compose
+### docker-compose
 see docker-compose.yml
