@@ -25,7 +25,7 @@ RUN apt update && \
 		libxi6 \
 		libxrender1 \
 		software-properties-common \
-		default-jre && \
+		default-jre-headless && \
 	apt autoremove -y && \
 	apt autoclean && \
 rm -rf /var/lib/apt/lists/* /tmp/* && \
