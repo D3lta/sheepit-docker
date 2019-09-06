@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 ARG SHEEPIT_JAR_URL="https://www.sheepit-renderfarm.com/media/applet/client-latest.php"
+ARG VERSION
 
 ENV WORKDIR "/app"
 ENV SHEEPIT_JAR_FILENAME "sheepit.jar"
