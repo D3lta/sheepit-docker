@@ -5,6 +5,7 @@ echo "Build hook running"
 VCS_REF=`git rev-parse --short HEAD`
 BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
 VERSION=`curl --silent --head https://www.sheepit-renderfarm.com/media/applet/client-latest.php | grep -Po 'filename="sheepit-client-\K([^"])+(?=.jar)'`
+echo $VERSION
 
 docker build \
   --build-arg VCS_REF=$VCS_REF \
