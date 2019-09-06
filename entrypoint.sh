@@ -1,5 +1,20 @@
 #!/bin/bash
 
-echo "Using: ${USER}:${PASS} with ${cores} cores and cache-dir: ${cache}"
+cat << EOF
+Username:       ${SHEEPIT_USER}
+Token:          ${SHEEPIT_TOKEN}
+Cores:          ${SHEEPIT_CORES}
+Memory:         ${SHEEPIT_MEM}
+Server:         ${SHEEPIT_SERVER}
+EOF
 
-exec java -jar ${WORKDIR}/${NAME} --verbose -ui text -login ${USER} -password ${PASS} -cores ${cores} -cache-dir ${cache}
+
+exec java -jar "${WORKDIR}"/"${NAME}" \
+--verbose \
+-ui text \
+-login "${SHEEPIT_USER}" \
+-password "${SHEEPIT_TOKEN}" \
+-cores "${SHEEPIT_CORES}" \
+-memory "${SHEEPIT_MEM}" \
+-server "${SHEEPIT_SERVER}" \
+-cache-dir "${SHEEPIT_CACHE}"
