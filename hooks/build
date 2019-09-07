@@ -4,12 +4,10 @@ echo "Build hook running"
 
 VCS_REF=`git rev-parse --short HEAD`
 BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
-DOCKER_TAG=`curl --silent --head https://www.sheepit-renderfarm.com/media/applet/client-latest.php | grep -Po 'filename="sheepit-client-\K([^"])+(?=.jar)'`
+VERSION=`curl --silent --head https://www.sheepit-renderfarm.com/media/applet/client-latest.php | grep -Po 'filename="sheepit-client-\K([^"])+(?=.jar)'`
 
 docker build \
   --build-arg VCS_REF=$VCS_REF \
   --build-arg BUILD_DATE=$BUILD_DATE \
-  --build-arg DOCKER_TAG=$VERSION \
+  --build-arg VERSION=$VERSION \
   -t $IMAGE_NAME .
-
-echo "Build hook end"
