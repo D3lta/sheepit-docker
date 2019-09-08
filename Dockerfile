@@ -5,6 +5,12 @@ ARG BUILD_VERSION
 ARG VCS_REF
 ARG BUILD_DATE
 
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/D3lta/sheepit-docker.git" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.version=$BUILD_VERSION \
+      org.label-schema.schema-version="1.0.0-rc1"
+
 ENV WORKDIR "/app"
 ENV SHEEPIT_JAR_FILENAME "sheepit.jar"
 ENV SHEEPIT_USER "D3lta"
