@@ -1,4 +1,6 @@
 #!/bin/bash
 
+printenv
+
 docker tag $IMAGE_NAME $DOCKER_REPO:$BUILD_VERSION
 docker push $DOCKER_REPO:$BUILD_VERSION
