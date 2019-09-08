@@ -4,12 +4,7 @@ ARG SHEEPIT_JAR_URL="https://www.sheepit-renderfarm.com/media/applet/client-late
 ARG BUILD_VERSION
 ARG VCS_REF
 ARG BUILD_DATE
-
-LABEL org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-url="https://github.com/D3lta/sheepit-docker.git" \
-      org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.version=$BUILD_VERSION \
-      org.label-schema.schema-version="1.0.0-rc1"
+ARG DOCKER_TAG
 
 ENV WORKDIR "/app"
 ENV SHEEPIT_JAR_FILENAME "sheepit.jar"
