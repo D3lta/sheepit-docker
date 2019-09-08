@@ -2,10 +2,15 @@
 
 echo "Build hook running"
 
-BUILD_VERSION=`curl --silent --head https://www.sheepit-renderfarm.com/media/applet/client-latest.php | grep -Po 'filename="sheepit-client-\K([^"])+(?=.jar)'`
+# BUILD_VERSION=`curl --silent --head https://www.sheepit-renderfarm.com/media/applet/client-latest.php | grep -Po 'filename="sheepit-client-\K([^"])+(?=.jar)'`
 
-docker build \
-    --build-arg VCS_REF=`git rev-parse --short HEAD` \
-    --build-arg BUILD_DATE=`date -u +”%Y-%m-%dT%H:%M:%SZ”` \
-    --build-arg BUILD_VERSION=$BUILD_VERSION
-    --tag $IMAGE_NAME .
+# docker build \
+#    --build-arg VCS_REF=`git rev-parse --short HEAD` \
+#    --build-arg BUILD_DATE=`date -u +”%Y-%m-%dT%H:%M:%SZ”` \
+#    --build-arg BUILD_VERSION=$BUILD_VERSION
+#    --tag $IMAGE_NAME .
+
+docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+             --build-arg VCS_REF=`git rev-parse --short HEAD` \
+             --build-arg BUILD_TAG=`curl --silent --head https://www.sheepit-renderfarm.com/media/applet/client-latest.php | grep -Po 'Content-Disposition:.*filename="?\Ksheepit-client-[\d\.]+'` \
+             -t $IMAGE_NAME . 
