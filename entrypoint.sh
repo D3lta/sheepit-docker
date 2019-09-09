@@ -9,7 +9,7 @@ Server:         ${SHEEPIT_SERVER}
 EOF
 
 
-exec java -jar "${WORKDIR}"/"${NAME}" \
+exec java -jar "${WORKDIR}"/"${SHEEPIT_JAR_FILENAME}" \
 --verbose \
 -ui text \
 -login "${SHEEPIT_USER}" \
