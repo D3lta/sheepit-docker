@@ -20,7 +20,7 @@ ADD entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
 RUN apt update && \
-	apt install -y \
+	apt install -y --no-install-recommends \
 		wget \
 		bzip2 \
 		libfreetype6 \
