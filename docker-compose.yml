@@ -3,7 +3,6 @@ services:
   sheepit:
     build: .
     image: d3lta/sheepit
-#    restart: unless-stopped
 #    mem_limit: 6114MB
     env_file:
       - "env"
